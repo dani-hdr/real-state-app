@@ -28,7 +28,7 @@ const Header = () => {
               showMenu ? "translate-x-0" : "-translate-x-96"
             } lg:transform-none ease left-0 bottom-0 z-50 top-0 lg:p-0 px-4 py-4 `}
           >
-            <ul className="flex flex-col lg:flex-row  items-start lg:m-0 mt-10 gap-16 text-black dark:text-slate-400 dark:text-slate-400 font-medium ">
+            <ul className="flex flex-col lg:flex-row  items-start lg:m-0 mt-10 gap-16 text-black dark:text-slate-400 font-medium ">
               <li className="hover:text-blue transition-colors decoration-2 decoration-blue hover:underline cursor-pointer  underline-offset-8 ">
                 <Link href="/">Search</Link>
               </li>

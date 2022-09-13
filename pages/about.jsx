@@ -4,8 +4,8 @@ const about = () => {
   return (
       <Container>
         <Card className="mt-10">
-          <h1 className="text-black text-4xl font-bold">About Page</h1>
-          <p className="text-gray text-md mt-5">
+          <h1 className="text-black dark:text-[#fff] text-4xl font-bold">About Page</h1>
+          <p className="text-gray dark:text-slate-400 text-md mt-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
             fugiat alias fuga omnis ullam suscipit officiis amet repellat
             possimus repellendus quod eaque vero nobis, consectetur dolores nam
