@@ -24,7 +24,7 @@ const Header = () => {
             </span>
           </div>
           <nav
-            className={`absolute lg:mx-auto lg:relative bg-white dark:bg-slate-800 lg:bg-transparent lg:shadow-none shadow-lg transition ${
+            className={`absolute lg:mx-auto lg:relative bg-white dark:bg-slate-800 md:dark:bg-transparent lg:bg-transparent lg:shadow-none shadow-lg transition ${
               showMenu ? "translate-x-0" : "-translate-x-96"
             } lg:transform-none ease left-0 bottom-0 z-50 top-0 lg:p-0 px-4 py-4 `}
           >
