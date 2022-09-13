@@ -1,7 +1,4 @@
-import { createSlice , createAsyncThunk } from '@reduxjs/toolkit'
-import { estateService } from './../Services/estateService';
-
-
+import { createSlice } from '@reduxjs/toolkit'
 
 export const filterSlice = createSlice({
     name:'filter',

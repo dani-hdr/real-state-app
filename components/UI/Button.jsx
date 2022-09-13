@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ children , color,...rest }) => {
+const Button = ({ children,link , color,...rest }) => {
   if(color === "green") {
     return (
       <button
@@ -20,6 +20,13 @@ const Button = ({ children , color,...rest }) => {
         {children}
       </button>
     );
+  }else if(link){
+    <a
+    {...rest}
+    className={`py-2 px-4  min-w-min font-medium bg-yellow-500 hover:bg-yellow-600   transition-colors text-white rounded-lg`}
+  >
+    {children}
+  </a>
   }
 };
 

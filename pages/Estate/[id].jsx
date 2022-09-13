@@ -6,7 +6,7 @@ import { estateService } from "../../Services/estateService";
 const detail = ({estate}) => {
   return (
     <Container>
-      <div className="flex items-start justify-between gap-6 pt-10">
+      <div className="flex flex-col lg:flex-row items-center md:items-start justify-between gap-6 pt-10">
         <EstateInfo item={estate} />
         <Map item={estate} zoom={40} />
       </div>

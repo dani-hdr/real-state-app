@@ -5,7 +5,6 @@ import Container from "../components/UI/Container";
 import { estateService } from "./../Services/estateService";
 import { useSelector } from "react-redux";
 
-
 export default function Home({ estates }) {
   
   const search = useSelector((state) => state.filter.search);
@@ -63,9 +62,9 @@ export default function Home({ estates }) {
     <main>
       <Container>
         <SearchFilter />
-        <div className="flex justify-between items-start">
-          <EstateList items={filterEstates()} />
+        <div className="flex flex-col md:flex-row-reverse gap-7 justify-center items-center md:items-start">
           <Map zoom={4} center={[37.09024, -95.712891]} items={filterEstates()} />
+          <EstateList items={filterEstates()} />
         </div>
       </Container>
     </main>

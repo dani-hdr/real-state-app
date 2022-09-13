@@ -11,7 +11,7 @@ import "swiper/css/navigation";
 
 const EstateInfo = ({ item }) => {
   return (
-    <div className="w-1/2">
+    <div className="w-full lg:w-1/2">
       <Card>
         <div>
           <Swiper
@@ -31,15 +31,15 @@ const EstateInfo = ({ item }) => {
                 />
               </SwiperSlide>
             ))}
-          </Swiper>
+        </Swiper>
 
-          <h1 className="text-black font-bold text-2xl mt-4">
+          <h1 className="text-black dark:text-[#fff] font-bold text-2xl mt-4">
             {formatter.format(item.price)} {item.for}
           </h1>
-          <span className="py-2 text-gray font-medium">
+          <span className="py-2 text-gray dark:text-slate-400 font-medium">
             {item.region} - {item.city} {item.address}
           </span>
-          <div className="py-2 px-10 bg-white flex justify-between rounded-lg my-5">
+          <div className="py-2 px-10 bg-white dark:bg-slate-700 flex justify-between rounded-lg my-5">
             <div className="flex flex-col items-center">
               <MdBathtub size={40} className="text-blue" />
               <span className="font-medium">{item.bathroom} BathRooms</span>
@@ -56,7 +56,7 @@ const EstateInfo = ({ item }) => {
           </div>
           <h3 className="text-xl font-bold mb-2">About this Estate</h3>
           <article>
-            <p className="text-gray text-md tracking-wide leading-8">
+            <p className="text-gray dark:text-slate-400 text-md tracking-wide leading-8">
               {item.description}
             </p>
           </article>

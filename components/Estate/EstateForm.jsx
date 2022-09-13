@@ -4,8 +4,7 @@ import * as yup from "yup";
 import Button from "./../UI/Button";
 import Card from "./../UI/Card";
 import TextAreaField from "./../UI/Form/TextAreaField";
-import SelectField from "../UI/Form/SelectField";
-import { estateService } from "../../Services/estateService";
+import SelectField from "../UI/Form/SelectField";;
 import { useState, useEffect } from "react";
 import FileField from "./../UI/Form/FileField";
 import Image from "next/image";
@@ -13,10 +12,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import {useRouter} from 'next/router'
 const EstateForm = () => {
   const [images, setImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([])
+  const router = useRouter()
   useEffect(() => {
     const previews = Array.from(images).map(img=> URL.createObjectURL(img))
     setPreviewImages(previews)
@@ -64,9 +64,9 @@ const EstateForm = () => {
           description: "",
           price: 0,
         }}
-        onSubmit={(values, actions) => {
-          // estateService.add(values).then(res=>console.log(res.data))
-          console.log(values.image);
+        onSubmit={(values) => {
+          router.push('/')
+          console.log(values);
         }}
         validationSchema={submitSechma}
       >

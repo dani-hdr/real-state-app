@@ -8,6 +8,8 @@
 @layer base {
   body {
     @apply bg-[#fff];
-    @apply pb-5;
+    @apply relative;
+    @apply min-h-screen;
+    @apply dark:bg-slate-900;
   }
 }

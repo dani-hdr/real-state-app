@@ -19,6 +19,7 @@ const SearchFilter = () => {
   const area = useSelector((state) => state.filter.area);
 
   const clearSearch = ()=>{
+
     dispatch(setSearch(''))
     dispatch(setFor(''))
     dispatch(setType(''))
@@ -27,7 +28,8 @@ const SearchFilter = () => {
     dispatch(setArea(''))
   }
   return (
-      <div className="flex justify-start gap-2 mb-10">
+      <div className="flex flex-wrap justify-start gap-2 mb-10">
+        <Button onClick={clearSearch} color='yellow' >Clear Search</Button>
         <SearchInput
           placeholder="search by city"
           value={search}
@@ -90,7 +92,7 @@ const SearchFilter = () => {
           <option value="700">700m</option>
           <option value="900">900m</option>
         </SelectInput>
-        <Button onclick={clearSearch} color='yellow' >Clear Search</Button>
+        
       </div>
   );
 };

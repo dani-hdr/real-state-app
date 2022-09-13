@@ -9,9 +9,7 @@ const getById = async (id)=>{
   return await axios.get(`/estate/${id}`)
 }
 
-const add = async (item)=>{
-  return await axios.post("/estate",item)
-}
 
 
-export const estateService = {getAll , getById , add};
+
+export const estateService = {getAll , getById };

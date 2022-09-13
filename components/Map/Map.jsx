@@ -1,24 +1,18 @@
-import dynamic from "next/dynamic";
+
 import "leaflet/dist/leaflet.css";
 import {
   MapContainer,
   TileLayer,
   Marker,
   Popup,
-  useMapEvent,
 } from "react-leaflet";
 
 import * as L from "leaflet";
 import { formatter } from '../../utils/formatter';
 import { useSelector } from "react-redux";
 
-const LocationMarker = () => {
-  useMapEvent({
-    click(e) {
-      console.log(e.latlng);
-    },
-  });
-};
+
+
 const Map = ({items , item, zoom , center}) => {
   const isMarkerHoverd = useSelector(state=>state.map.isMarkerHoverd)
   const markerId = useSelector(state=>state.map.markerId)
@@ -38,9 +32,9 @@ const Map = ({items , item, zoom , center}) => {
 
   return (
     <>
-      <div className="w-1/2 sticky top-5  ">
+      <div className="w-full flex-grow lg:w-1/2 h-60 md:h-[69vh] z-30 sticky top-0 md:top-5  ">
         <MapContainer
-          className="w-full h-[76vh] rounded-2xl"
+          className="w-full h-full rounded-2xl"
           center={item ? item.position : center}
           zoom={zoom}
           scrollWheelZoom={true}
@@ -65,7 +59,7 @@ const Map = ({items , item, zoom , center}) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          <LocationMarker />
+          
         </MapContainer>
       </div>
     </>
