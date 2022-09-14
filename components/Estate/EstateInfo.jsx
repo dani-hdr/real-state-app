@@ -22,9 +22,10 @@ const EstateInfo = ({ item }) => {
             slidesPerView={1}
           >
             {item.image.map((img) => (
-              <SwiperSlide>
+              <SwiperSlide key={img}>
                 <Image
                   className="w-full "
+                  alt={img}
                   width={800}
                   height={400}
                   src={`/images/${img}`}

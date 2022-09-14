@@ -12,7 +12,7 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  console.log(theme);
+  
   return (
     <header className="mb-10">
       <Container>
@@ -56,13 +56,18 @@ const Header = () => {
             </ul>
           </nav>
          
-          <div>
-            <Link href="/create">
-              <Button color="green">
-                Add your esate
-              </Button>
+          {/* <div> */}
+           {/* <div className="bg-green-500 hover:bg-green-600 transition text-white font-semibold px-4 py-2 rounded-lg">
+           <Link href="/create">
+              Submit your estate
             </Link>
-          </div>
+           </div>
+          </div> */}
+         
+          <Link  href="/create" >
+             <a className="py-2 px-4 min-w-min bg-green-500 hover:bg-green-600 font-medium    transition-colors text-white rounded-lg">Submit your estate </a>
+            </Link>
+          
 
           <div className=" lg:hidden text-black dark:text-[#fff] cursor-pointer text-4xl">
             {showMenu ? (

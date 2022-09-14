@@ -35,19 +35,19 @@ const SearchFilter = () => {
           value={search}
           onChange={(e) => dispatch(setSearch(e.target.value))}
         />
-        <SelectInput value={forWhat}  onChange={(e) => dispatch(setFor(e.target.value))}>
-          <option selected value="">
+        <SelectInput  value={forWhat}  onChange={(e) => dispatch(setFor(e.target.value))}>
+          <option value="">
             For Sale/Rent
           </option>
           <option value="sale">For Sale</option>
           <option value="rent">For Rent</option>
         </SelectInput>
-        <SelectInput value={type} onChange={(e) => dispatch(setType(e.target.value))}>
-          <option selected value="">Type</option>
+        <SelectInput  value={type} onChange={(e) => dispatch(setType(e.target.value))}>
+          <option  value="">Type</option>
           <option value="house">House</option>
           <option value="apartment">Apartment</option>
         </SelectInput>
-        <SelectInput value={minPrice} onChange={(e) => dispatch(setMinPrice(e.target.value))}>
+        <SelectInput   value={minPrice} onChange={(e) => dispatch(setMinPrice(e.target.value))}>
           <option value="">
               Min Price
           </option>
@@ -62,8 +62,8 @@ const SearchFilter = () => {
           <option value="900000">$900k</option>
           <option value="1000000">$1m</option>
         </SelectInput>
-        <SelectInput value={maxPrice}  onChange={(e) => dispatch(setMaxPrice(e.target.value))}>
-          <option selected value=''>
+        <SelectInput  value={maxPrice}  onChange={(e) => dispatch(setMaxPrice(e.target.value))}>
+          <option  value=''>
               Max Price
           </option>
           <option value="10000">
@@ -77,8 +77,8 @@ const SearchFilter = () => {
           <option value="900000">$900k</option>
           <option value="1000000">$1m</option>
         </SelectInput>
-        <SelectInput value={area} onChange={e=> dispatch(setArea(e.target.value))}>
-          <option selected value="">
+        <SelectInput  value={area} onChange={e=> dispatch(setArea(e.target.value))}>
+          <option value="">
             Min Area
           </option>
           <option value="50">50m</option>
