@@ -16,7 +16,6 @@ import { useSelector } from "react-redux";
 const Map = ({items , item, zoom , center}) => {
   const isMarkerHoverd = useSelector(state=>state.map.isMarkerHoverd)
   const markerId = useSelector(state=>state.map.markerId)
-  console.log(item)
   const LeafIcon = L.Icon.extend({
     options: {}
   });

@@ -14,7 +14,7 @@ export default function Home({ estates }) {
   const minPrice = useSelector((state) => state.filter.minPrice);
   const maxPrice = useSelector((state) => state.filter.maxPrice);
   const area = useSelector((state) => state.filter.area);
-
+  
   const filterEstates = () => {
     return estates
       .filter((data) => {
@@ -59,6 +59,8 @@ export default function Home({ estates }) {
         return data;
       });
   };
+
+ 
   return (
     <main>
       <Head>
@@ -69,7 +71,7 @@ export default function Home({ estates }) {
       <Container>
         <SearchFilter />
         <div className="flex flex-col md:flex-row-reverse gap-7 justify-center items-center md:items-start">
-          <Map zoom={4} center={[37.09024, -95.712891]} items={filterEstates()} />
+          { filterEstates().length > 0 &&  (<Map zoom={4} center={[37.09024, -95.712891]} items={filterEstates()} />)}
           <EstateList items={filterEstates()} />
         </div>
       </Container>
