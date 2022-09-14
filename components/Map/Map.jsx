@@ -46,7 +46,7 @@ const Map = ({items , item, zoom , center}) => {
           </Marker>
           }
           {items &&  items.map((item) => (
-            <Marker   icon={(isMarkerHoverd && item.id === markerId) ? blueIcon : whiteIcon} key={item.id} position={item.position}>
+            <Marker    icon={(isMarkerHoverd && item.id === markerId) ? blueIcon : whiteIcon} key={item.id} position={item.position}>
               <Popup>
                 {formatter.format(item.price)} <br /> {item.address}
               </Popup>

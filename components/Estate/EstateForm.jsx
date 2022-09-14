@@ -13,6 +13,8 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import {useRouter} from 'next/router'
+
+
 const EstateForm = () => {
   const [images, setImages] = useState([]);
   const [previewImages, setPreviewImages] = useState([])
@@ -79,10 +81,10 @@ const EstateForm = () => {
             spaceBetween={0}
             slidesPerView={1}
           >
-            {previewImages.map((img) => (
-              <SwiperSlide key={img}>
+            {previewImages.map((img,index) => (
+              <SwiperSlide key={index}>
                 <Image
-                  alt={img}
+                  alt=""
                   className="w-full "
                   width={800}
                   height={400}
