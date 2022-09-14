@@ -5,14 +5,14 @@ import { IoMdClose } from "react-icons/io";
 import Container from "../UI/Container";
 import Button from "../UI/Button";
 import { useState } from "react";
-import {useTheme} from 'next-themes'
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { useTheme } from "next-themes";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const {theme,setTheme} = useTheme();
-  
-  console.log(theme)
+  const { theme, setTheme } = useTheme();
+
+  console.log(theme);
   return (
     <header className="mb-10">
       <Container>
@@ -44,24 +44,26 @@ const Header = () => {
               <li className="hover:text-blue transition-colors decoration-2 decoration-blue hover:underline cursor-pointer  underline-offset-8 ">
                 <Link href="/blog">blog</Link>
               </li>
+              <li className="mt-auto hover:text-blue transition-colors decoration-2 decoration-blue hover:underline cursor-pointer  underline-offset-8 ">
+              <DarkModeToggle
+            onChange={()=> setTheme(theme === 'dark' ? 'light' : 'dark')}
+            checked={theme === 'dark' ? true : false}
+            size={65}
+            className="mr-1"
+          />
+              </li>
             </ul>
           </nav>
-          <DarkModeSwitch
-      style={{ marginRight: '1rem' }}
-      checked={theme==='dark' ? true : false}
-      onChange={()=> setTheme(theme==='dark' ? 'light' : 'dark')}
-      size={40}
-    />
-          <div >
+         
+          <div>
             <Link href="/create">
               <Button color="green" link>
                 Add your esate
               </Button>
             </Link>
           </div>
-          
-         
-          <div className="lg:hidden text-black dark:text-[#fff] cursor-pointer text-4xl">
+
+          <div className=" lg:hidden text-black dark:text-[#fff] cursor-pointer text-4xl">
             {showMenu ? (
               <IoMdClose onClick={() => setShowMenu(false)} />
             ) : (

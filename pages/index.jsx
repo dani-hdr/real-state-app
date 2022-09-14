@@ -4,6 +4,7 @@ import Map from "../components/Map";
 import Container from "../components/UI/Container";
 import { estateService } from "./../Services/estateService";
 import { useSelector } from "react-redux";
+import Head from "next/head";
 
 export default function Home({ estates }) {
   
@@ -60,6 +61,11 @@ export default function Home({ estates }) {
   };
   return (
     <main>
+      <Head>
+        <title>Home page</title>
+        <meta name="description" content="Free Real Estate platform"/>
+
+      </Head>
       <Container>
         <SearchFilter />
         <div className="flex flex-col md:flex-row-reverse gap-7 justify-center items-center md:items-start">

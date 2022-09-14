@@ -1,11 +1,15 @@
-
 import EstateInfo from "../../components/Estate/EstateInfo";
 import Container from "../../components/UI/Container";
 import Map from "../../components/Map";
 import { estateService } from "../../Services/estateService";
-const detail = ({estate}) => {
+import Head from "next/head";
+const detail = ({ estate }) => {
   return (
     <Container>
+      <Head>
+        <title> estate {estate.forWhat} in {estate.city}</title>
+        <meta name="description" content={estate.description} />
+      </Head>
       <div className="flex flex-col lg:flex-row items-center md:items-start justify-between gap-6 pt-10">
         <EstateInfo item={estate} />
         <Map item={estate} zoom={40} />
@@ -14,25 +18,27 @@ const detail = ({estate}) => {
   );
 };
 
-export const getStaticProps = async(context) =>{
+export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await estateService.getById(id)
+  const res = await estateService.getById(id);
   const estate = await res.data;
   return {
-    props : {
-      estate
-    }
-  }
-}
+    props: {
+      estate,
+    },
+  };
+};
 
-export const getStaticPaths = async ()=>{
-   const res = await estateService.getAll();
-   const estates = await res.data;
-   const paths = estates.map(estate=> ({ params : { id : estate.id.toString()}}))
-    return {
-      paths ,
-      fallback : false
-    }
-}
+export const getStaticPaths = async () => {
+  const res = await estateService.getAll();
+  const estates = await res.data;
+  const paths = estates.map((estate) => ({
+    params: { id: estate.id.toString() },
+  }));
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export default detail;

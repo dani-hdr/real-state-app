@@ -1,8 +1,14 @@
 import Container from "./../components/UI/Container";
 import Card from "./../components/UI/Card";
+import Head from "next/head";
 const agents = () => {
   return (
     <Container>
+       <Head>
+        <title>agents page</title>
+        <meta name="description" content="this is agents page"/>
+
+      </Head>
     <Card className="mt-10">
       <h1 className="text-black dark:text-[#fff] text-4xl font-bold">Real Estates Agents Page</h1>
       <p className="text-gray dark:text-slate-400 text-md mt-5">
