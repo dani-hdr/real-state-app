@@ -80,8 +80,9 @@ const EstateForm = () => {
             slidesPerView={1}
           >
             {previewImages.map((img) => (
-              <SwiperSlide>
+              <SwiperSlide key={img}>
                 <Image
+                  alt={img}
                   className="w-full "
                   width={800}
                   height={400}

@@ -56,13 +56,7 @@ const Header = () => {
             </ul>
           </nav>
          
-          {/* <div> */}
-           {/* <div className="bg-green-500 hover:bg-green-600 transition text-white font-semibold px-4 py-2 rounded-lg">
-           <Link href="/create">
-              Submit your estate
-            </Link>
-           </div>
-          </div> */}
+
          
           <Link  href="/create" >
              <a className="py-2 px-4 min-w-min bg-green-500 hover:bg-green-600 font-medium    transition-colors text-white rounded-lg">Submit your estate </a>
