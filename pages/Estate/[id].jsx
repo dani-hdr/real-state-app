@@ -3,6 +3,7 @@ import Container from "../../components/UI/Container";
 import Map from "../../components/Map";
 import estateData from '../../data/estate.json'
 import Head from "next/head";
+import NotFound from './../404';
 const detail = ({estate}) => {
   return (
     <Container>
@@ -27,7 +28,8 @@ export const getStaticProps = async (context) => {
     props: {
       estate,
     },
-    revalidate : 60
+    revalidate : 60,
+    notFound : !estate ? true : false 
   };
 };
 
