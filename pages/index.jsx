@@ -2,9 +2,9 @@ import SearchFilter from "../components/SearchFilter";
 import EstateList from "../components/Estate/EstateList";
 import Map from "../components/Map";
 import Container from "../components/UI/Container";
-import { estateService } from "./../Services/estateService";
 import { useSelector } from "react-redux";
 import Head from "next/head";
+import estateData from '../data/estate.json'
 
 export default function Home({ estates }) {
   
@@ -80,12 +80,11 @@ export default function Home({ estates }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await estateService.getAll();
-  const estates = await res.data;
+  
   return {
     props: {
-      estates,
+      estates : estateData,
     },
-     revalidate : 1000
+    revalidate : 60
   };
 };

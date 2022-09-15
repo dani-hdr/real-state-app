@@ -8,7 +8,6 @@ const help = () => {
        <Head>
         <title>help page</title>
         <meta name="description" content="this is about page"/>
-
       </Head>
     <Card className="mt-10">
       <h1 className="text-black dark:text-[#fff] text-4xl font-bold">Help Page</h1>

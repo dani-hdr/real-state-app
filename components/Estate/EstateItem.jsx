@@ -13,7 +13,7 @@ const EstateItem = ({item}) => {
   const dispatch = useDispatch()
   const router = useRouter()
   return (
-    <div onClick={()=>router.push(`/Estate/${item.id}`)} onMouseLeave={()=> dispatch(unsetHover(item.id))} onMouseEnter={()=>dispatch(setHover(item.id))} className="flex w-full flex-col  flex-grow rounded-2xl dark:bg-slate-800 shadow-md hover:shadow-lg cursor-pointer hover:-translate-y-1  transition-all ease-in-out ">
+    <div onClick={()=>router.push(`/estate/${item.id}`)} onMouseLeave={()=> dispatch(unsetHover(item.id))} onMouseEnter={()=>dispatch(setHover(item.id))} className="flex w-full flex-col  flex-grow rounded-2xl dark:bg-slate-800 shadow-md hover:shadow-lg cursor-pointer hover:-translate-y-1  transition-all ease-in-out ">
       <div className="relative">
         <div className="absolute z-10 flex gap-2 top-5 left-5">
           <Badge color="blue">{item.forWhat}</Badge>

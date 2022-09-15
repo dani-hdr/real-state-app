@@ -1,9 +1,9 @@
 import EstateInfo from "../../components/Estate/EstateInfo";
 import Container from "../../components/UI/Container";
 import Map from "../../components/Map";
-import { estateService } from "../../Services/estateService";
+import estateData from '../../data/estate.json'
 import Head from "next/head";
-const detail = ({ estate }) => {
+const detail = ({estate}) => {
   return (
     <Container>
       <Head>
@@ -16,29 +16,33 @@ const detail = ({ estate }) => {
       </div>
     </Container>
   );
+ 
+  
 };
 
 export const getStaticProps = async (context) => {
-  const id = context.params.id;
-  const res = await estateService.getById(id);
-  const estate = await res.data;
+  const estateId = context.params.id;
+  const estate = estateData.find(x=> x.id === +estateId);
   return {
     props: {
       estate,
     },
+    revalidate : 1000
   };
 };
 
 export const getStaticPaths = async () => {
-  const res = await estateService.getAll();
-  const estates = await res.data;
-  const paths = estates.map((estate) => ({
+ 
+  const paths = estateData.map((estate) => ({
     params: { id: estate.id.toString() },
   }));
   return {
     paths,
     fallback: false,
+  
   };
 };
 
 export default detail;
+
+
