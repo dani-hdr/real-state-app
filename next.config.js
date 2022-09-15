@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   env : {
-    domain : 'http://localhost:3000/'
+    domain : 'http://localhost:3000'
   }
 }
 
