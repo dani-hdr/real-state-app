@@ -18,17 +18,17 @@ const Header = () => {
       <Container>
         <div className="flex  pt-8 justify-between items-center">
           <div className="flex items-center">
-            <BsHouseFill size={30} className="text-blue mb-1 mr-2" />
-            <span className="text-black dark:text-[#fff] text-2xl md:text-3xl font-bold">
-              <Link href="/">RealEstate</Link>
-            </span>
+            <div className="flex text-black dark:text-[#fff] text-2xl md:text-3xl font-bold">
+              <Link href="/"><BsHouseFill size={30} className="text-blue mb-1 mr-2" /></Link>
+              <span className="hidden sm:block"><Link href="/">RealEstate</Link></span>
+            </div>
           </div>
           <nav
             className={`absolute lg:mx-auto lg:relative bg-white dark:bg-slate-800 md:dark:bg-transparent lg:bg-transparent lg:shadow-none shadow-lg transition ${
               showMenu ? "translate-x-0" : "-translate-x-96"
             } lg:transform-none ease left-0 bottom-0 z-50 top-0 lg:p-0 px-4 py-4 `}
           >
-            <ul className="flex flex-col lg:flex-row  items-start md:items-center lg:m-0 mt-10 gap-16 text-black dark:text-slate-400 font-medium ">
+            <ul className="flex flex-col lg:flex-row  items-start md:items-center lg:m-0 mt-10 gap-10 xl:gap-16 text-black dark:text-slate-400 font-medium ">
               <li className="hover:text-blue transition-colors decoration-2 decoration-blue hover:underline cursor-pointer  underline-offset-8 ">
                 <Link href="/">Search</Link>
               </li>
