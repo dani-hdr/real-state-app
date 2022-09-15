@@ -40,7 +40,7 @@ const EstateInfo = ({ item }) => {
           <span className="py-2 text-gray dark:text-slate-400 font-medium">
             {item.region} - {item.city} {item.address}
           </span>
-          <div className="py-2 px-10 bg-white dark:bg-slate-700 flex justify-between rounded-lg my-5">
+          <div className="py-2 px-5 text-sm sm:text-lg bg-white dark:bg-slate-700 flex justify-between rounded-lg my-5">
             <div className="flex flex-col items-center">
               <MdBathtub size={40} className="text-blue" />
               <span className="font-medium">{item.bathroom} BathRooms</span>

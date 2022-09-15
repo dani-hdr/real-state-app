@@ -9,7 +9,7 @@ const about = () => {
         <meta name="description" content="this is about page" />
       </Head>
       <Card className="mt-10">
-        <h1 className="text-black dark:text-[#fff] text-4xl font-bold">
+        <h1 className="text-black dark:text-[#fff] text-2xl md:text-4xl font-bold">
           About Page
         </h1>
         <p className="text-gray dark:text-slate-400 text-md mt-5">

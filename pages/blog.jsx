@@ -10,7 +10,7 @@ const blog = () => {
 
       </Head>
     <Card className="mt-10">
-      <h1 className="text-black dark:text-[#fff] text-4xl font-bold">Blog Page</h1>
+      <h1 className="text-black dark:text-[#fff] text-2xl md:text-4xl font-bold">Blog Page</h1>
       <p className="text-gray dark:text-slate-400 text-md mt-5">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
         fugiat alias fuga omnis ullam suscipit officiis amet repellat
