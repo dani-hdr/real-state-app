@@ -18,7 +18,6 @@ export default function Home({ estates }) {
   const area = useSelector((state) => state.filter.area);
   
   useEffect(()=>{
-    
     setFilterdEstates(estates.filter((data) => {
       if (search !== "") {
         const filterData =
@@ -60,7 +59,7 @@ export default function Home({ estates }) {
       }
       return data;
     }) )
-  },[search,forWhat,type,minPrice,maxPrice,area])
+  },[estates,search,forWhat,type,minPrice,maxPrice,area])
 
   return (
     <main>
