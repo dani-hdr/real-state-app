@@ -1,6 +1,6 @@
-import Container from "./../components/UI/Container";
-import Map from "../components/Map";
-import EstateForm from "../components/Estate/EstateForm";
+import Container from "../../components/UI/Container";
+import Map from "../../components/Map";
+import EstateForm from "../../components/Estate/EstateForm";
 const create = () => {
   return (
     <Container>
