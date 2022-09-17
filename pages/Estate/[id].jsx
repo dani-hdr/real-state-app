@@ -4,7 +4,7 @@ import Map from "../../components/Map";
 import estateData from '../../data/estate.json'
 import Head from "next/head";
 
-const detail = ({estate}) => {
+const detailPage = ({estate}) => {
   return (
     <Container>
       <Head>
@@ -29,7 +29,6 @@ export const getStaticProps = async (context) => {
       estate,
     },
     revalidate : 60,
-    notFound : !estate ? true : false 
   };
 };
 
@@ -45,6 +44,6 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default detail;
+export default detailPage;
 
 
