@@ -26,7 +26,7 @@ export const getStaticProps = async (context) => {
   const estate = estateData.find(x=> x.id === +estateId);
   return {
     props: {
-      estate,
+    estate,
     },
     revalidate: 60,
     notFound : !estate

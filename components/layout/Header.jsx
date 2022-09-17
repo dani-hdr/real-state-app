@@ -3,20 +3,36 @@ import { BsHouseFill } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import Container from "../UI/Container";
-import Button from "../UI/Button";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useTheme } from "next-themes";
 import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [navbar , setNavbar] = useState(false)
 
-  
+  useEffect(()=>{
+    const onScroll = () =>{
+      if(window.scrollY > 70){
+        setNavbar(true)
+      }else{
+        setNavbar(false)
+      }
+    }
+    window.addEventListener('scroll' ,onScroll )
+
+    return () =>{
+      window.removeEventListener('scroll', onScroll)
+    }
+  },[])
+  const stickyHeaderHandler = ()=>{
+    window.addEventListener("scroll" ,)
+  }
   return (
-    <header className="mb-10">
+    <header className={`mb-10 z-40  transition ${navbar ? 'bg-white dark:bg-slate-800 sticky shadow-md top-0' : ''} `}>
       <Container>
-        <div className="flex  pt-8 justify-between items-center">
+        <div className="flex py-4 justify-between items-center">
           <div className="flex items-center">
             <div className="flex text-black dark:text-[#fff] text-2xl md:text-3xl font-bold">
               <Link href="/"><BsHouseFill size={30} className="text-blue mb-1 mr-2" /></Link>
@@ -24,7 +40,7 @@ const Header = () => {
             </div>
           </div>
           <nav
-            className={`absolute z-50 lg:mx-auto lg:relative bg-white dark:bg-slate-800 lg:dark:bg-transparent lg:bg-transparent lg:shadow-none shadow-lg transition ${
+            className={`fixed z-50 lg:mx-auto lg:relative bg-white dark:bg-slate-800 lg:dark:bg-transparent lg:bg-transparent lg:shadow-none shadow-lg transition ${
               showMenu ? "translate-x-0" : "-translate-x-96"
             } lg:transform-none ease left-0 bottom-0 z-50 top-0 lg:p-0 px-4 py-4 `}
           >
@@ -53,8 +69,6 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-         
-
          
           <Link  href="/create" >
              <a className="py-2 px-4 min-w-min bg-green-500 hover:bg-green-600 font-medium    transition-colors text-white rounded-lg">Submit your estate </a>
