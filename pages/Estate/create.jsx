@@ -1,7 +1,7 @@
 import Container from "../../components/UI/Container";
 import Map from "../../components/Map";
 import EstateForm from "../../components/Estate/EstateForm";
-const create = () => {
+const createPage = () => {
   return (
     <Container>
       <div className="flex flex-col lg:flex-row gap-4 items-center lg:items-start justify-center lg:justify-between">
@@ -14,4 +14,4 @@ const create = () => {
   );
 };
 
-export default create;
+export default createPage;
