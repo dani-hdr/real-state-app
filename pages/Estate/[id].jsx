@@ -28,7 +28,8 @@ export const getStaticProps = async (context) => {
     props: {
       estate,
     },
-    revalidate: 60
+    revalidate: 60,
+    notFound : !estate
   };
 };
 
@@ -40,6 +41,7 @@ export const getStaticPaths = async () => {
   return {
     paths,
     fallback: 'blocking',
+   
   
   };
 };
