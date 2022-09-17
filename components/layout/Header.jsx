@@ -56,7 +56,7 @@ const Header = () => {
          
 
          
-          <Link  href="/estate" >
+          <Link  href="/create" >
              <a className="py-2 px-4 min-w-min bg-green-500 hover:bg-green-600 font-medium    transition-colors text-white rounded-lg">Submit your estate </a>
             </Link>
           
