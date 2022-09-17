@@ -5,10 +5,6 @@ import estateData from '../../data/estate.json'
 import Head from "next/head";
 
 const detail = ({estate}) => {
-
-  if(!estate){
-    return <p>loading...</p>
-  }
   return (
     <Container>
       <Head>
@@ -33,6 +29,7 @@ export const getStaticProps = async (context) => {
       estate,
     },
     revalidate : 60,
+    notFound : !estate ? true : false 
   };
 };
 
