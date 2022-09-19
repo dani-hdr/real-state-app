@@ -23,6 +23,8 @@ const EstateItem = ({item}) => {
           <Like active={item.isLiked}/>
         </div>
         <Image
+          placeholder="blur"
+          blurDataURL={`/images/${item.image[0]}`}
           width={500}
           height={250}
           className="rounded-3xl contrast-75 "

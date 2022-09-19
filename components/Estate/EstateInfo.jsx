@@ -24,6 +24,8 @@ const EstateInfo = ({ item }) => {
             {item.image.map((img,index) => (
               <SwiperSlide key={index}>
                 <Image
+                  placeholder="blur"
+                  blurDataURL={`/images/${img}`}
                   className="w-full "
                   alt={item.address}
                   width={800}
