@@ -31,7 +31,7 @@ const Map = ({items , item, zoom , center}) => {
 
   return (
     <>
-      <div className="w-full flex-grow lg:w-1/2 h-60 md:h-[69vh] z-30 md:sticky top-20 md:top-20  ">
+      <div className="w-full flex-grow lg:w-1/2 h-60 md:h-[69vh] z-30 md:sticky top-24 ">
         <MapContainer
           className="w-full h-full rounded-2xl"
           center={item ? item.position : center}
