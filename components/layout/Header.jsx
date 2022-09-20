@@ -6,6 +6,7 @@ import Container from "../UI/Container";
 import { useState,useEffect } from "react";
 import { useTheme } from "next-themes";
 import DarkModeToggle from "react-dark-mode-toggle";
+import Button from './../UI/Button';
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,13 +27,12 @@ const Header = () => {
       window.removeEventListener('scroll', onScroll)
     }
   },[])
-  const stickyHeaderHandler = ()=>{
-    window.addEventListener("scroll" ,)
-  }
+
   return (
-    <header className={`mb-10 z-40  transition ${navbar ? 'bg-white dark:bg-slate-800 sticky shadow-md top-0' : ''} `}>
+    <>
+    <header className={`mb-10 z-40    transition ${navbar ? 'bg-white dark:bg-slate-800 sticky shadow-md top-0' : ''} `}>
       <Container>
-        <div className="flex py-4 justify-between items-center">
+        <div className="flex cursor-pointer py-4 justify-between items-center">
           <div className="flex items-center">
             <div className="flex text-black dark:text-[#fff] text-2xl md:text-3xl font-bold">
               <Link href="/"><BsHouseFill size={30} className="text-blue mb-1 mr-2" /></Link>
@@ -70,10 +70,11 @@ const Header = () => {
             </ul>
           </nav>
          
-          <Link  href="/create" >
-             <a className="py-2 px-4 min-w-min bg-green-500 hover:bg-green-600 font-medium    transition-colors text-white rounded-lg">Submit your estate </a>
-            </Link>
-          
+         
+         <Link  href="/create" >
+             <a className="py-3 px-6 shadow-lg  bg-green-500 hover:bg-green-600 font-medium    transition-colors text-white rounded-lg">Submit your estate </a>
+            </Link> 
+
 
           <div className=" lg:hidden text-black dark:text-[#fff] cursor-pointer text-4xl">
             {showMenu ? (
@@ -85,6 +86,8 @@ const Header = () => {
         </div>
       </Container>
     </header>
+   
+    </>
   );
 };
 
