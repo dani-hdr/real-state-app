@@ -1,4 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+See the live demo [here](https://homyz.vercel.app/) and give it a ⭐!
+
+## Are you hiring?
+I'm looking for an entry level job. If you've any opportunity, please let me know. 🙏
 
 ## Getting Started
 
